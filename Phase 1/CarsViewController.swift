@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CarsViewController: UIViewController {
     
@@ -25,21 +26,22 @@ class CarsViewController: UIViewController {
         // Do any additional setup after loading the view.
         showCarsOnMapButton.isEnabled = false
         
-//        if let path = Bundle.main.path(forResource: "carsJSON", ofType: "json") {
-//            do {
-//                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: [])
-//
-//                let car = try? JSONDecoder().decode(Car.self, from: jsonData)
-//
-//                if let car = car {
-//                    carsArray = car
-//                }
-//            } catch {
-//                // handle error
-//            }
-//        }
+        guard let token = UserDefaults.standard.string(forKey: "token") else { return }
         
-        carsArray = CarElement.parseFromLocal()
+        AF.request("https://driveg.vapor.cloud/api/cars/random", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Content-Type":"application/json; charset=utf-8",
+                                                                                                                                    "Authorization":"Bearer \(token)"])
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                if (response.error == nil) {
+                    if let returnedCars = try? JSONDecoder().decode(Car.self, from: response.data!) {
+                        self.carsArray = returnedCars
+                        self.tableView.reloadData()
+                    }
+                }
+                else {
+                    debugPrint("HTTP Request failed: \(response.error)")
+                }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

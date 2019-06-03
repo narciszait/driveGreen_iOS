@@ -10,5 +10,6 @@ target 'Phase 1' do
   pod 'GooglePlaces'
   # pod 'Google-Maps-iOS-Utils'
   pod 'IQKeyboardManagerSwift', '6.0.4'
+  pod 'Alamofire', '~> 5.0.0-beta.5'
 
 end

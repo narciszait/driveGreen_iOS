@@ -23,6 +23,7 @@
 		EC76BE152208E57F00A8F0C9 /* CarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76BE142208E57F00A8F0C9 /* CarsViewController.swift */; };
 		EC76BE172208E58A00A8F0C9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76BE162208E58A00A8F0C9 /* MapViewController.swift */; };
 		EC76BE1B2208ED1B00A8F0C9 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76BE1A2208ED1B00A8F0C9 /* Car.swift */; };
+		ECEC727D22A570E20048B018 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEC727C22A570E20048B018 /* LoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		EC76BE142208E57F00A8F0C9 /* CarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewController.swift; sourceTree = "<group>"; };
 		EC76BE162208E58A00A8F0C9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EC76BE1A2208ED1B00A8F0C9 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		ECEC727C22A570E20048B018 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,21 +108,30 @@
 		EC76BE012208D75800A8F0C9 /* Phase 1 */ = {
 			isa = PBXGroup;
 			children = (
+				ECEC727922A570280048B018 /* Models */,
 				EC025A6D2282CC2000D50446 /* Extras */,
 				EC76BE022208D75800A8F0C9 /* AppDelegate.swift */,
 				EC76BE042208D75800A8F0C9 /* LoginViewController.swift */,
 				EC76BE062208D75800A8F0C9 /* Main.storyboard */,
 				EC76BE142208E57F00A8F0C9 /* CarsViewController.swift */,
-				EC76BE1A2208ED1B00A8F0C9 /* Car.swift */,
-				EC33873422385BB300162488 /* Charger.swift */,
 				EC76BE162208E58A00A8F0C9 /* MapViewController.swift */,
 				EC76BE092208D75A00A8F0C9 /* Assets.xcassets */,
 				EC76BE0B2208D75A00A8F0C9 /* LaunchScreen.storyboard */,
 				EC76BE0E2208D75A00A8F0C9 /* Info.plist */,
-				EC33873022385B2000162488 /* carsJSON.json */,
-				EC33873222385B5B00162488 /* chargersJSON.json */,
 			);
 			path = "Phase 1";
+			sourceTree = "<group>";
+		};
+		ECEC727922A570280048B018 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC76BE1A2208ED1B00A8F0C9 /* Car.swift */,
+				EC33873422385BB300162488 /* Charger.swift */,
+				EC33873022385B2000162488 /* carsJSON.json */,
+				EC33873222385B5B00162488 /* chargersJSON.json */,
+				ECEC727C22A570E20048B018 /* LoginResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F544467B75BB2D19B97ECE11 /* Frameworks */ = {
@@ -240,12 +251,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Phase 1/Pods-Phase 1-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +299,7 @@
 				EC76BE032208D75800A8F0C9 /* AppDelegate.swift in Sources */,
 				EC76BE1B2208ED1B00A8F0C9 /* Car.swift in Sources */,
 				EC33873522385BB300162488 /* Charger.swift in Sources */,
+				ECEC727D22A570E20048B018 /* LoginResponse.swift in Sources */,
 				EC025A712282CC8200D50446 /* VideoContainer.swift in Sources */,
 				EC76BE152208E57F00A8F0C9 /* CarsViewController.swift in Sources */,
 				EC025A6F2282CC7B00D50446 /* BackgroundVideo.swift in Sources */,

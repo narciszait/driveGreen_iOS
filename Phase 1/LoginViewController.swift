@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import Alamofire
 
 class LoginViewController: UIViewController {
     
@@ -28,7 +29,23 @@ class LoginViewController: UIViewController {
         }
 
         if (passwordTextField.text != "" && (emailTextField.text?.contains("@drivegreen.com") != false)) {
-            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+            let basicAuthString = "\(email):\(password)"
+            
+            AF.request("https://driveg.vapor.cloud/api/users/login", method: .post, parameters: nil, encoding: JSONEncoding.default, headers: ["Content-Type":"application/json; charset=utf-8",
+                                                                                                                                               "Authorization":"Basic \(basicAuthString.toBase64())"])
+                .validate(statusCode: 200..<300)
+                .responseJSON { response in
+                    if (response.error == nil) {
+                        if let returnedData = try? JSONDecoder().decode(LoginResponseData.self, from: response.data!) {
+                            UserDefaults.standard.set(returnedData.token, forKey: "token")
+                            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                        }
+                    }
+                    else {
+                        debugPrint("HTTP Request failed: \(response.error)")
+                    }
+            }
         } else {
             self.showAlerts(title: "Error", message: "Wrong username and/or password");
         }
