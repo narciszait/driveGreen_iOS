@@ -73,7 +73,7 @@ class MapViewController: UIViewController {
                 destinations.append(car.latitude + "," + car.longitude + "|")
             }
             
-            let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origins.latitude),\(origins.longitude)&destination=\(origins.latitude),\(origins.longitude)&waypoints=optimize:true|\(destinations)&key=AIzaSyCgSfaDzPowpy7aw3n6eGANXWJO4F1Vap4"
+            let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origins.latitude),\(origins.longitude)&destination=\(origins.latitude),\(origins.longitude)&waypoints=optimize:true|\(destinations)&key="
             let urlStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)! as String
             let searchURL = URL(string: urlStr as String)!
             

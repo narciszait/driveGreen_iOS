@@ -15,7 +15,6 @@
 		EC33873122385B2000162488 /* carsJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = EC33873022385B2000162488 /* carsJSON.json */; };
 		EC33873322385B5B00162488 /* chargersJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = EC33873222385B5B00162488 /* chargersJSON.json */; };
 		EC33873522385BB300162488 /* Charger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC33873422385BB300162488 /* Charger.swift */; };
-		EC458454220C6BD3001DE485 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC458453220C6BD3001DE485 /* Misc.swift */; };
 		EC76BE032208D75800A8F0C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76BE022208D75800A8F0C9 /* AppDelegate.swift */; };
 		EC76BE052208D75800A8F0C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76BE042208D75800A8F0C9 /* LoginViewController.swift */; };
 		EC76BE082208D75800A8F0C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC76BE062208D75800A8F0C9 /* Main.storyboard */; };
@@ -40,7 +39,6 @@
 		EC33873022385B2000162488 /* carsJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = carsJSON.json; sourceTree = "<group>"; };
 		EC33873222385B5B00162488 /* chargersJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chargersJSON.json; sourceTree = "<group>"; };
 		EC33873422385BB300162488 /* Charger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charger.swift; sourceTree = "<group>"; };
-		EC458453220C6BD3001DE485 /* Misc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		EC76BDFF2208D75800A8F0C9 /* Phase 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Phase 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC76BE022208D75800A8F0C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC76BE042208D75800A8F0C9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				EC76BE0E2208D75A00A8F0C9 /* Info.plist */,
 				EC33873022385B2000162488 /* carsJSON.json */,
 				EC33873222385B5B00162488 /* chargersJSON.json */,
-				EC458453220C6BD3001DE485 /* Misc.swift */,
 			);
 			path = "Phase 1";
 			sourceTree = "<group>";
@@ -290,7 +287,6 @@
 				EC76BE1B2208ED1B00A8F0C9 /* Car.swift in Sources */,
 				EC33873522385BB300162488 /* Charger.swift in Sources */,
 				EC025A712282CC8200D50446 /* VideoContainer.swift in Sources */,
-				EC458454220C6BD3001DE485 /* Misc.swift in Sources */,
 				EC76BE152208E57F00A8F0C9 /* CarsViewController.swift in Sources */,
 				EC025A6F2282CC7B00D50446 /* BackgroundVideo.swift in Sources */,
 				EC76BE172208E58A00A8F0C9 /* MapViewController.swift in Sources */,
