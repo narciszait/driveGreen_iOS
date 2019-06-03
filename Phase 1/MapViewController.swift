@@ -14,7 +14,6 @@ class MapViewController: UIViewController {
     var carMarkers = Car()
     var mapView = GMSMapView()
     var chargersArray = Charger()
-    var closestChargers = Charger()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,31 +36,12 @@ class MapViewController: UIViewController {
         mapView.isMyLocationEnabled = true
         view = mapView
         
-        if let path = Bundle.main.path(forResource: "chargersJSON", ofType: "json") {
-            do {
-                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: [])
-            
-                let charger = try? JSONDecoder().decode(Charger.self, from: jsonData)
-            
-                if let charger = charger {
-                    print("charger 3")
-                    chargersArray = charger
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-        }
-        
         loadCarsOnMap()
-//        loadChargersOnMap()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if let origins = mapView.myLocation {
-//            loadChargersOnMap()
-        }
+
     }
 
     func loadCarsOnMap() {
@@ -78,37 +58,6 @@ class MapViewController: UIViewController {
             circ.strokeColor = UIColor(red: 255/255, green: 153/255, blue: 51/255, alpha: 0.5)
             circ.strokeWidth = 2.5;
             circ.map = mapView;
-        }
-    }
-    
-    func loadChargersOnMap() {
-        print("loading chargers")
-        if let origins = mapView.myLocation {
-            print("loading chargers 1")
-            for car in carMarkers {
-                for charger in chargersArray {
-                    if CLLocation(latitude: Double(car.latitude)!, longitude: Double(car.longitude)!).distance(from: CLLocation(latitude: charger.latitude, longitude: charger.longitude)) < 1000
-                    && CLLocation(latitude: Double(car.latitude)!, longitude: Double(car.longitude)!).distance(from: CLLocation(latitude: charger.latitude, longitude: charger.longitude)) > 700 {
-                        print("distance \(CLLocation(latitude: Double(car.latitude)!, longitude: Double(car.longitude)!).distance(from: CLLocation(latitude: charger.latitude, longitude: charger.longitude)))")
-                        print("loading chargers 2")
-                        let marker = GMSMarker()
-                        marker.position = CLLocationCoordinate2D(latitude: Double(charger.latitude), longitude: Double(charger.longitude))
-                        marker.title = "Charger \(Int(CLLocation(latitude: Double(car.latitude)!, longitude: Double(car.longitude)!).distance(from: CLLocation(latitude: charger.latitude, longitude: charger.longitude)))) m"
-                        marker.snippet = "Rented prev. \(charger.history)"
-                        marker.icon = GMSMarker.markerImage(with: UIColor.green)
-                        marker.map = mapView
-                        closestChargers.append(charger)
-                        print("loading chargers 3")
-                    }
-                }
-//                for charger in chargersArray {
-//                    let marker = GMSMarker()
-//                    marker.position = CLLocationCoordinate2D(latitude: Double(charger.latitude), longitude: Double(charger.longitude))
-//                    marker.title = "Charger"
-//                    marker.icon = GMSMarker.markerImage(with: UIColor.green)
-//                    marker.map = mapView
-//                }
-            }
         }
     }
     

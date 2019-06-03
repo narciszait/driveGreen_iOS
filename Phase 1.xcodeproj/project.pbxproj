@@ -24,7 +24,6 @@
 		EC76BE152208E57F00A8F0C9 /* CarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76BE142208E57F00A8F0C9 /* CarsViewController.swift */; };
 		EC76BE172208E58A00A8F0C9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76BE162208E58A00A8F0C9 /* MapViewController.swift */; };
 		EC76BE1B2208ED1B00A8F0C9 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76BE1A2208ED1B00A8F0C9 /* Car.swift */; };
-		ECC3CC91220B45A800D946C7 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC3CC90220B45A800D946C7 /* TabbarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +51,6 @@
 		EC76BE142208E57F00A8F0C9 /* CarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewController.swift; sourceTree = "<group>"; };
 		EC76BE162208E58A00A8F0C9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EC76BE1A2208ED1B00A8F0C9 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		ECC3CC90220B45A800D946C7 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +111,6 @@
 				EC025A6D2282CC2000D50446 /* Extras */,
 				EC76BE022208D75800A8F0C9 /* AppDelegate.swift */,
 				EC76BE042208D75800A8F0C9 /* LoginViewController.swift */,
-				ECC3CC90220B45A800D946C7 /* TabbarViewController.swift */,
 				EC76BE062208D75800A8F0C9 /* Main.storyboard */,
 				EC76BE142208E57F00A8F0C9 /* CarsViewController.swift */,
 				EC76BE1A2208ED1B00A8F0C9 /* Car.swift */,
@@ -290,7 +287,6 @@
 			files = (
 				EC76BE052208D75800A8F0C9 /* LoginViewController.swift in Sources */,
 				EC76BE032208D75800A8F0C9 /* AppDelegate.swift in Sources */,
-				ECC3CC91220B45A800D946C7 /* TabbarViewController.swift in Sources */,
 				EC76BE1B2208ED1B00A8F0C9 /* Car.swift in Sources */,
 				EC33873522385BB300162488 /* Charger.swift in Sources */,
 				EC025A712282CC8200D50446 /* VideoContainer.swift in Sources */,

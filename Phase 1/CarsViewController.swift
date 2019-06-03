@@ -25,19 +25,21 @@ class CarsViewController: UIViewController {
         // Do any additional setup after loading the view.
         showCarsOnMapButton.isEnabled = false
         
-        if let path = Bundle.main.path(forResource: "carsJSON", ofType: "json") {
-            do {
-                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: [])
-                
-                let car = try? JSONDecoder().decode(Car.self, from: jsonData)
-                
-                if let car = car {
-                    carsArray = car
-                }
-            } catch {
-                // handle error
-            }
-        }
+//        if let path = Bundle.main.path(forResource: "carsJSON", ofType: "json") {
+//            do {
+//                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: [])
+//
+//                let car = try? JSONDecoder().decode(Car.self, from: jsonData)
+//
+//                if let car = car {
+//                    carsArray = car
+//                }
+//            } catch {
+//                // handle error
+//            }
+//        }
+        
+        carsArray = CarElement.parseFromLocal()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
